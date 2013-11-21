@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.params=aName\ aPrijs
-comment0.target=Artikel(java.lang.String,\ float)
-comment1.params=aName
-comment1.target=void\ setName(java.lang.String)
-comment2.params=aPrice
-comment2.target=void\ setPrice(float)
-numComments=3
