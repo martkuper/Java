@@ -1,14 +1,5 @@
 import java.util.Arrays;
 
-/**
- * Class voor personen
- * 
- * @author Mart Kuper
- * @version 1.0
- * Last edit 19-11-2013
- */
-  
-
 public class Persoon { 
  
     private int BSN; 
@@ -40,6 +31,7 @@ public class Persoon {
        bMonth = aMonth;
        bYear = aYear;
        gender = aGender;
+       setBirthDate(aDay, aMonth, aYear);
        setGender(aGender);
    }
 
@@ -82,6 +74,11 @@ public class Persoon {
      * @param aYear Je geboortejaar
      */
     public boolean setBirthDate(int aDay, int aMonth, int aYear){
+        boolean schrikkeljaar = false;
+        if(aYear % 4 == 0){
+            schrikkeljaar = true;
+        }
+
         if(aDay < 1 || aMonth < 1 || aMonth > 12 || aYear < 1900 || aYear > 2100){
 
             invalidDate();
@@ -92,12 +89,17 @@ public class Persoon {
             invalidDate();
             return false;
 
-        }else if(!(Arrays.asList(monthsWith31Days).contains(aMonth)) && aDay >= 31){
+        }else if(!(Arrays.asList(monthsWith31Days).contains(aMonth)) && aDay > 30 && schrikkeljaar == false && aMonth != 2){
 
             invalidDate();
             return false;
 
-        }else if(aMonth == 2 && aDay > 28){
+        }else if(schrikkeljaar == true && aMonth == 2 && aDay > 29){
+
+            invalidDate();
+            return false;
+
+        }else if(schrikkeljaar == false && aMonth == 2 && aDay > 28){
 
             invalidDate();
             return false;
