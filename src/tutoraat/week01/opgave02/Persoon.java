@@ -33,13 +33,15 @@ public class Persoon {
      * @param aGender Je geslacht
      */
    public Persoon(int aBSN, String aFirstName, String aLastName, int aDay, int aMonth, int aYear, char aGender){
-        gender = aGender;
-        setBSN(aBSN);
-        setFirstName(aFirstName);
-        setLastName(aLastName);
-        setGender(aGender);
-        setBirthDate(aDay, aMonth, aYear);
-    }
+       BSN = aBSN;
+       firstName = aFirstName;
+       lastName = aLastName;
+       bDay = aDay;
+       bMonth = aMonth;
+       bYear = aYear;
+       gender = aGender;
+       setGender(aGender);
+   }
 
     /**
      * Zet je geboortedag, maand en jaar op 0.
@@ -122,8 +124,6 @@ public class Persoon {
         }
     }
 
-
-
     /**
      * Getter voor burgerservicenummer
      * @return Burgerservicenummer
@@ -167,7 +167,9 @@ public class Persoon {
      * Getter voor geslacht
      * @return Geslacht
      */
-    public String getsGender(){
+    public String getSGender(){
+
+        return "Je bent een " + sGender;
 
     }
 
