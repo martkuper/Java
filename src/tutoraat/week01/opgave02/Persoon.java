@@ -173,4 +173,8 @@ public class Persoon {
 
     }
 
+    public void drukAf(){
+        System.out.println(getBSN());
+    }
+
 }
